@@ -1,18 +1,5 @@
 import run from "aocrunner";
-
-const parseInput = (rawInput) => rawInput.split("\n").map(inp => parseInt(inp));
-
-const part1 = (rawInput) => {
-  const input = parseInput(rawInput);
-
-  return;
-};
-
-const part2 = (rawInput) => {
-  const input = parseInput(rawInput);
-
-  return;
-};
+import {part1, part2} from "./solution.js"
 
 run({
   part1: {
