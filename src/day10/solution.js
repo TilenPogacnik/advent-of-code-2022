@@ -6,9 +6,8 @@ const solution = (rawInput) => {
     const [signalStrength, pixels] = executeProgram(instructions);
 
     console.log('\n-----------------');
-    console.log('Part 1 solution: Signal strength ' + signalStrength);
-    console.log('Part 2 solution: ');
-    console.log(pixels);
+    console.log(`Part 1 solution: Signal strength ${signalStrength}`);
+    console.log(`Part 2 solution: ${pixels}`);
 
     return signalStrength;
 };
@@ -21,26 +20,25 @@ const executeProgram = (instructions) => {
 
     let pixels = '';
     let signalStrength = 0;
-    let nextCycleCheck = 20;
 
     const runCycle = () => {
         pixels += getPixel(cycle, X);
-        cycle = cycle + 1;
+        cycle++;
 
-        if (cycle === nextCycleCheck) {
-            signalStrength += nextCycleCheck * X;
-            nextCycleCheck += 40;
+        if ((cycle - 20) % 40 === 0) {
+            signalStrength += cycle * X;
         }
     };
 
     instructions.forEach((instruction) => {
         if (instruction[0] === 'noop') {
             runCycle();
-        } else {
+        } else if (instruction[0] === 'addx'){
             runCycle();
             runCycle();
-
             X += Number(instruction[1]);
+        } else {
+            console.log(`Unknown command: ${instruction[0]}`)
         }
     });
 
@@ -50,7 +48,7 @@ const executeProgram = (instructions) => {
 const getPixel = (cycle, X) => {
     const pixel = cycle % 40;
     const isLit = Math.abs(pixel - X) <= 1;
-    return (pixel === 0 ? '\n' : '') + (isLit ? '#' : '.');
+    return (pixel === 0 ? '\n' : '') + (isLit ? '█' : ' ');
 };
 
 export { solution };

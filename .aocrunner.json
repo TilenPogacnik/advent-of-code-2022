@@ -136,11 +136,11 @@
         "solved": true,
         "result": "12740",
         "attempts": [],
-        "time": 1.030876
+        "time": 0.656389
       },
       "part2": {
         "solved": true,
-        "result": null,
+        "result": "RBPARAGF",
         "attempts": [],
         "time": null
       }
