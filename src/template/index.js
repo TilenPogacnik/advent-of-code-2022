@@ -1,25 +1,17 @@
 import run from 'aocrunner';
 import { part1, part2 } from './solution.js';
 
+const testInput = ``;
+
 run({
     part1: {
-        tests: [
-            // {
-            //   input: ``,
-            //   expected: "",
-            // },
-        ],
+        tests: [{ input: testInput, expected: 0 }],
         solution: part1,
     },
-    part2: {
-        tests: [
-            // {
-            //   input: ``,
-            //   expected: "",
-            // },
-        ],
-        solution: part2,
-    },
+    // part2: {
+    //     tests: [{ input: testInput, expected: 0 }],
+    //     solution: part2,
+    // },
     trimTestInputs: true,
-    onlyTests: false,
+    onlyTests: true,
 });

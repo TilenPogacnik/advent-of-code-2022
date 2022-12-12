@@ -4,12 +4,12 @@
 const part1 = (rawInput) => {
     const input = parseInput(rawInput);
 
-    return 0;
+    return -1;
 };
 
 const parseInput = (rawInput) => rawInput.split('\n');
 
 const part2 = (rawInput) => {
-    return 0;
+    return -1;
 };
 export { part1, part2 };
