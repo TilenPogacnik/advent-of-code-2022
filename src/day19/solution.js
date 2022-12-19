@@ -36,6 +36,9 @@ const testBlueprint = (blueprint, time) => {
     const search = (time, oreRobots, clayRobots, obsidianRobots, ore, clay, obsidian, geodes) => {
         if (time < 1) return;
 
+        if (geodes + (time * (time + 1)) / 2 < maxGeode) {
+            return;
+        }
         if (geodes > maxGeode) {
             maxGeode = geodes;
         }
