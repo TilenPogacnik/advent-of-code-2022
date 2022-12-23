@@ -23,4 +23,19 @@ const binarySearch = (range, target, testFunction) => {
     return -1;
 };
 
-export { sumArrays, binarySearch };
+const padNumericArray = (array, paddingValue, thickness) => {
+    const sidePad = paddingValue.toString().repeat(thickness);
+    const topPad = paddingValue.toString().repeat(array[0].length).split('');
+
+    for (let i = 0; i < thickness; i++) {
+        array.unshift(topPad);
+        array.push(topPad);
+    }
+
+    array = array.map((a) => sidePad + a.join('') + sidePad);
+    array = array.map((a) => a.split('').map((n) => +n));
+
+    return array;
+};
+
+export { sumArrays, binarySearch, padNumericArray };
