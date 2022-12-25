@@ -353,13 +353,13 @@
     },
     {
       "part1": {
-        "solved": false,
-        "result": null,
+        "solved": true,
+        "result": "2-2=21=0021=-02-1=-0",
         "attempts": [],
-        "time": null
+        "time": 1.062796
       },
       "part2": {
-        "solved": false,
+        "solved": true,
         "result": null,
         "attempts": [],
         "time": null
